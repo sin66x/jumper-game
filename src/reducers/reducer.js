@@ -8,7 +8,6 @@ const initialState = {
 const reducer = (state = initialState , action) => {
   switch (action.type) {
     case(SELECT_CHARACTER):
-      alert('Hiiiii'+action.selectedCharacter+JSON.stringify(state));
       return { 
         selectedCharacter: action.selectedCharacter
       };

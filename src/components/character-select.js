@@ -16,10 +16,11 @@ class CharacterSelect extends Component {
   render() {
     return(
        <div>
-        <Character src={char1} charId='0'/>
-        <Character src={char2} charId='1'/>
-        <Character src={char3} charId='2'/>
-        <Character src={char4} charId='3'/>
+        Select your character:
+        <Link to='/play/1'><Character src={char1} charId='1'/></Link>
+         <Link to='/play/2'><Character src={char2} charId='2'/></Link>
+         <Link to='/play/3'><Character src={char3} charId='3'/></Link>
+         <Link to='/play/4'><Character src={char4} charId='4'/></Link>
        </div>
     )
   }
