@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import reducer from './reducers/reducer.js'
+import {selectCharacter} from './actions/actions'
+import CharacterSelector from './components/character-select.js'
+import Play from './components/play.js'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export default App;
+class App extends Component {
+  render(){
+    const { selectedCharacter } = this.props
+   return (
+     <Router>
+       <Route exact path="/" component={CharacterSelector} />
+       <Route path="/play/:character" component={Play} />
+     </Router>
+   );
+  }
+}
+function select(state) {
+   return {
+      selectedCharacter: state.selectedCharacter
+   }
+}
+export default connect(select)(App);
