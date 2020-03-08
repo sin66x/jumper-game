@@ -1,0 +1,5 @@
+class Conf {
+  JUMP_HEIGHT=50;
+  SKY_HEIGHT=150;
+  JUMP_TIME_MILIS=500;
+}
